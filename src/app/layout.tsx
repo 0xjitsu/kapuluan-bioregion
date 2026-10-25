@@ -14,7 +14,10 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const SITE = "https://kapuluan-bioregion.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE),
   title: {
     default: "Kapuluan — Philippine Bioregion Atlas",
     template: "%s · Kapuluan",
@@ -25,6 +28,25 @@ export const metadata: Metadata = {
     title: "Kapuluan — Philippine Bioregion Atlas",
     description: "Living by watershed & sea",
     type: "website",
+    images: [{ url: `${SITE}/og/preview.png`, width: 1200, height: 630 }],
+    videos: [
+      {
+        url: `${SITE}/og/preview.mp4`,
+        secureUrl: `${SITE}/og/preview.mp4`,
+        type: "video/mp4",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "player",
+    title: "Kapuluan — Philippine Bioregion Atlas",
+    description: "Living by watershed & sea",
+    images: [`${SITE}/og/preview.png`],
+    players: [
+      { playerUrl: `${SITE}/og/player.html`, streamUrl: `${SITE}/og/preview.mp4`, width: 1200, height: 630 },
+    ],
   },
 };
 
